@@ -21,7 +21,7 @@ logger = get_logger()
 app = Flask(__name__)
 
 
-@app.route("/data/", methods=['POST'])
+@app.route("/endpoint", methods=['POST'])
 def post_data():
     
     data = request.json
