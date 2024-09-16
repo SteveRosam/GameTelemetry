@@ -256,6 +256,13 @@ function generateGUID() {
             snakeLength: snake.cells.length,
             session_id: session_id
           });
+        // Send telemetry for new apple location
+        sendTelemetry({
+            type: 'new-apple',
+            x: apple.x,
+            y: apple.y,
+            session_id: session_id
+        });
       }
   
       // Check for collision with itself
