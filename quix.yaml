@@ -6,6 +6,35 @@ metadata:
 
 # This section describes the Deployments of the data pipeline
 deployments:
+  - name: Game Telemetry WS
+    application: gametelemetry-web-sockets
+    version: latest
+    deploymentType: Service
+    resources:
+      cpu: 1000
+      memory: 500
+      replicas: 1
+    publicAccess:
+      enabled: true
+      urlPrefix: gametelemetry
+    variables:
+      - name: output
+        inputType: OutputTopic
+        description: Output topic
+        required: true
+        value: clickstream
+  - name: Snake game
+    application: game
+    version: latest
+    deploymentType: Service
+    resources:
+      cpu: 200
+      memory: 500
+      replicas: 1
+    publicAccess:
+      enabled: true
+      urlPrefix: game
+    variables: []
   - name: FlaskAPI
     application: FlaskAPI
     version: latest
@@ -26,4 +55,5 @@ deployments:
 
 # This section describes the Topics of the data pipeline
 topics:
+  - name: clickstream
   - name: hello-world-source
