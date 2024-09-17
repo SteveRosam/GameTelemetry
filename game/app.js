@@ -43,7 +43,7 @@ function generateGUID() {
         // Form the WebSocket URL
         const wsURL = `${wsProtocol}//${wsHost}${url.pathname}`;
         
-        return "https://gametelemetry-quix-templategamepipeline-dev.deployments.quix.io";
+        return "https://gametelemetry-quix-templategamepipeline-dev.deployments.quix.io/";
         
         return wsURL;
     } catch (e) {
